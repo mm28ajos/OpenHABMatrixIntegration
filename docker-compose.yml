@@ -1,0 +1,13 @@
+version: '3.2'
+services:
+  openhab:
+    container_name: "openhab"
+    image: openhab/openhab:3.x.x-alpine
+    restart: always
+    volumes:
+      - "/home/user/mypipe:/openhab/hostpipe"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/home/user/openhab/conf:/openhab/conf"
+      - "/home/user/openhab/userdata:/openhab/userdata"
+      - "/home/user/openhab/addons:/openhab/addons"

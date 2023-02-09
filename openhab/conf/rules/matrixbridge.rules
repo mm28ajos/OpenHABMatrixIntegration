@@ -1,0 +1,15 @@
+rule "Send Matrix Message Default"
+when
+    Item MatrixMessageDefault received update
+then
+    logInfo("logger", "Started sending of matrix message default.") 
+    executeCommandLine("/bin/bash", "-c", "echo \"docker run --rm -v /home/user/matrixcommander:/data:z matrixcommander/matrix-commander:6 -m \'"+ MatrixMessageDefault.state.toString +"\'\" > /openhab/hostpipe" )
+end
+
+rule "Send Matrix Message Room X"
+when
+    Item MatrixMessageRoomX received update
+then
+    logInfo("logger", "Started sending of matrix to room x.") 
+    executeCommandLine("/bin/bash", "-c", "echo \"docker run --rm -v /home/user/matrixcommander:/data:z matrixcommander/matrix-commander:6 -r \'#roomx:matrixserver.com\' -m \'"+ MatrixMessageRoomX.state.toString +"\'\" > /openhab/hostpipe" )
+end

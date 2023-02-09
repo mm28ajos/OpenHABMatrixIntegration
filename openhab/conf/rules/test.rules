@@ -1,0 +1,7 @@
+rule "test_switch update"
+when
+    Item test_switch received update
+then
+    logInfo("logger", "Test matrix message") 
+    MatrixMessageDefault.sendCommand("Hello world!")
+end
