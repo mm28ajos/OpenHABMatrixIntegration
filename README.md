@@ -15,7 +15,7 @@ Copy the cronjob script from `cron/execpipe.sh` in this repository to `/home/use
 Make sure you have the matrix-commander image pulled by `docker pull matrixcommander/matrix-commander:6`
 
 ## Step 3: Set Up matrix commander
-Make sure you have set up matrix-commander correctly for the rooms you want to send messages to. For details refer to [the matrix-commander github page](hhttps://github.com/8go/matrix-commander). Make sure you have your configuration data of matrix-commander (credentials file and stroge folder) ready at `/home/user/matrixcommander` on the docker host.
+Make sure you have set up matrix-commander correctly for the rooms you want to send messages to. For details refer to [the matrix-commander github page](https://github.com/8go/matrix-commander). Make sure you have your configuration data of matrix-commander (credentials file and stroge folder) ready at `/home/user/matrixcommander` on the docker host.
 
 ## Step 4: Create Proxy Items and Rules
 Create string proxy items in openhab and proxy rules which call matrix-commander via the named pipe. Refer to examples in `openhab/conf/rules and openhab/conf/items` in this repro.
