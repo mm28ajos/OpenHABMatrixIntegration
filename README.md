@@ -8,7 +8,7 @@ Using a proxy string item to publish the message from any rule. Using a dedicate
 Remember to check all paths in the following description to map your setup.
 
 ## Step 1: Set Up Named Pipe
-For more details regadring the named pipes, refer to [this stackoverflow thread](https://stackoverflow.com/questions/32163955/how-to-run-shell-script-on-host-from-docker-container). Create a file under `/home/user/mypipe` on the host system.
+For more details regadring the named pipes, refer to [this stackoverflow thread](https://stackoverflow.com/questions/32163955/how-to-run-shell-script-on-host-from-docker-container). Create a file under `/home/user/mypipe` on the host system and run `mkfifo /home/user/mypipe` to create the named pipe.
 Copy the cronjob script from `cron/execpipe.sh` in this repository to `/home/user/cron` on the docker host and create a cronjob, refer to crontab file in this repository. Reboot the docker host. Add the file `/home/user/mypipe` to your openhab container as volumen at the mount point `/openhab/hostpipe`, refer to minimal example in `docker-compose.yml`.
 
 ## Step 2: Pull matrix-commander Image
